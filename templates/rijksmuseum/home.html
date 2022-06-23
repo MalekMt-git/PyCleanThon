@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    {% extends "rijksmuseum/template.html" %}
+      {% block content %}
+
+<div class="jumbotron text-center">
+  <h1>Rijksmuseum Collection</h1>
+  <p>Python + Flask + Bootstrap + Clean Architecture</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    {% for art_object in data %}
+    <div class="col-sm-4">
+      <img class="card-img-top img-thumbnail" src="{{ art_object.webImage.url }}" alt="foo" />
+      <h3>{{ art_object.title }}</h3>
+      <p>{{ art_object.longTitle }} </p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+    {% endblock %}
+  </body>
+</html>
