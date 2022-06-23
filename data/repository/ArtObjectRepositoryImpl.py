@@ -1,4 +1,6 @@
-from domain.model.APIResponse import APIResponse
+from typing import List
+
+from domain.model.APIResponse import APIResponse, ArtObject
 
 
 class ArtObjectRepositoryImpl:
@@ -6,5 +8,5 @@ class ArtObjectRepositoryImpl:
         self.ArtObjectAPIService = ArtObjectAPIService
         self.artObjects = []
 
-    def get_art_objects(self, ArtObjectHeadlinesQuery) -> APIResponse:
+    def get_art_objects(self, ArtObjectHeadlinesQuery) -> List[ArtObject]:
         return self.ArtObjectAPIService.get_art_objects(ArtObjectHeadlinesQuery)
